@@ -2,7 +2,7 @@
 from django.http  import HttpResponse,Http404,HttpResponseRedirect
 import datetime as dt
 from django.shortcuts import render,redirect,get_object_or_404
-from .forms import  UpdateUserForm, UpdateUserProfileForm
+from .forms import  Profile
 from django.contrib.auth.models import User
 # from .email import send_welcome_email
 from django.contrib.auth.decorators import login_required
@@ -34,18 +34,10 @@ def register(request):
         form = UserRegisterForm()
     return render(request,"registration/register.html",{'form':form})
 
-@login_required(login_url='login')
-def profile(request, username):
-    images = request.user.images.all()
-    if request.method == 'POST':
-        user_form = UpdateUserForm(request.POST, instance=request.user.profile)
-        profile_form = UpdateUserProfileForm(request.POST, request.FILES, instance=request.user.profile)
-        if user_form.is_valid() and profile_form.is_valid():
-            user_form.save()
-            profile_form.save()
-            return HttpResponseRedirect(request.path_info)
-    else:
-        user_form = UpdateUserForm(instance=request.user)
-        profile_form = UpdateUserProfileForm()
+@login_required(login_url='/accounts/login/')
+def profile(request):
+    current_user = request.user
+    profile = Profile.objects.filter(user_id=current_user.id).first()
+    # project = Project.objects.filter(user_id=current_user.id)
 
-    return render(request, 'all-instagram/profile.html', {'user_form':user_form,'profile_form':profile_form,'images':images})
+    return render(request,"profile.html",{'profile':profile})
