@@ -17,8 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from django.contrib.auth import views
+from award import views as insta_views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('award.urls')),
+    path('accounts/register/',insta_views.register, name='register'),
+    path('accounts/login/',auth_views.LoginView.as_view(redirect_authenticated_user=True), name='login'),
+    path('logout/',auth_views.LogoutView.as_view(), name='logout'),
 ]
