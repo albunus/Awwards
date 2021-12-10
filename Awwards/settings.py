@@ -10,7 +10,46 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+import django_heroku
+import dj_database_url
+from decouple import config,Csv
+
+
+MODE=config("MODE", default="dev")
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = os.environ.get('DEBUG', True)
+# development
+
+DATABASES = {
+    'default': dj_database_url.config(
+    )
+}
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+
+cloudinary.config(
+    cloud_name = config('CD_NAME'),
+    api_key= config('CD_API'),
+    api_secret=config('CD_SECRET'),
+    secure = config('CD_SECURE')
+)
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME':config('CD_NAME'),
+    'API_KEY': config('CD_API'),
+    'API_SECRET':config('CD_SECRET'),
+    'SECURE':config('CD_SECURE')
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +59,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-pfq33^53z*&$#3sgv7higsivx8(2n61%64r#+hcio#fg4^)%bu'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +76,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'award.apps.AwardConfig',
+    'bootstrap4',
+    'crispy_forms',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -76,9 +120,11 @@ WSGI_APPLICATION = 'Awwards.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+    'PASSWORD':config('DB_PASSWORD'),
     }
-}
+    }
 
 
 # Password validation
@@ -118,6 +164,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
