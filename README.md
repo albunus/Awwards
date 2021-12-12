@@ -17,3 +17,6 @@ To access this project on your local files, you can clone it using these steps
 ### Home page
 A user is required to register and login to the application. Upon successful authentication the user is redirected to home page where all projects posted by different users is displayed.
 *****
+### User Profile
+Every user registered in the application has profile associated with their account. Profile contains personal details and projects posted by that particular user.
+*****
