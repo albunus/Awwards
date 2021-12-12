@@ -23,10 +23,10 @@
                                     By {{ project.user.first_name }} {{ project.user.last_name }}
                                 </p>
                                 <!-- check if author profile exists -->
-                                {% if project.user.profile_pic_path %}
-                                <img src="{{ post.user.profile_pic_path }}" alt="author" class="author-img mt-3">
+                                {% if project.profile_photo %}
+                                <img src="{{ profile.profile_photo.url }}" alt="author" class="author-img mt-3">
                                 {% else %}
-                                <img src="https://image.pngaaa.com/303/1721303-middle.png" alt="author"
+                                <img src="/static/image/undraw_Social_share_re_qb4v.png" alt="author"
                                     class="author-img mt-3 mb-3">
                                 {% endif %}
                             </div>
@@ -127,11 +127,11 @@
                                     </div>
                                     <div class="m-1">
                                         <a class="btn btn-usability"><span class="text-dark">{{ rate.usability_rate }}</span></a> <br>
-                                        <span>Usability</span>
+                                        <span>Interface</span>
                                     </div>
                                     <div class="m-1">
                                         <a class="btn btn-content"><span class="text-dark">{{ rate.content_rate }}</span></a> <br>
-                                        <span>Content</span>
+                                        <span>User Experience</span>
                                     </div>
                                 </div>
                             </div>
@@ -149,8 +149,8 @@
                     <div class="col-md-12">
                         {% if user.is_authenticated %}
                         <div class="d-grid gap-2 mt-4">
-                            <button class="btn" type="button" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Vote</button>
+                            <button class="btn" type="button" data-toggle="modal"
+                                data-target="#exampleModal">Vote</button>
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                                 aria-hidden="true">
@@ -170,12 +170,12 @@
                                                         max="10" value="0">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="Usability">Usability</label>
+                                                    <label for="Usability">Interface</label>
                                                     <input type="number" class="form-control" name="usability" min="0"
                                                         max="10" value="0">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="Content">Content</label>
+                                                    <label for="Content">User Experience</label>
                                                     <input type="number" class="form-control" id="Content" min="0"
                                                         max="10" value="0" name="content">
                                                 </div>

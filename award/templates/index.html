@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 <!-- homepage section -->
 <section class="homepage">
@@ -31,11 +31,11 @@
                                     </div>
                                     <div>
                                         <a class="btn btn-usability"><span>{{ rating.usability_rate }}</span></a> <br>
-                                        <span>Usability</span>
+                                        <span>Interface</span>
                                     </div>
                                     <div>
                                         <a class="btn btn-content"><span>{{ rating.content_rate }}</span></a> <br>
-                                        <span>Content</span>
+                                        <span>User Experience</span>
                                     </div>
                                 </div>
                             </div>
@@ -43,16 +43,7 @@
                         <div class="row">
                             <div class="col-md-1"></div>
                             <div class="col-md-10">
-                                <!-- search input -->
-                                <form action="{% url 'search_project' %}" class="mt-5" >
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="Search for Project..." aria-label="Search for..."
-                                            aria-describedby="basic-addon2" name="search_term">
-                                        <div class="input-group-append">
-                                            <button class="btn" type="button">Search</button>
-                                        </div>
-                                    </div>
-                                </form>
+
                             </div>
                             <div class="col-md-1"></div>
                         </div>
@@ -89,8 +80,8 @@
                                 <div class="d-flex justify-content-start">
                                     <div>
                                         <!-- check if author image exists else display a placeholder -->
-                                        {% if project.user.profile_image %}
-                                        <img src="{{ project.user.profile_image.url }}"
+                                        {% if project.profile_photo %}
+                                        <img src="{{ project.profile_photo.url }}"
                                             class="poster-img" alt="Author">
                                         {% else %}
                                         <img src="https://st2.depositphotos.com/1104517/11965/v/600/depositphotos_119659092-stock-illustration-male-avatar-profile-picture-vector.jpg"

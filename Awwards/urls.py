@@ -15,15 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import include
-from django.contrib.auth import views
-from award import views as insta_views
+from django.conf.urls import url, include
+from django_registration.backends.one_step.views import RegistrationView
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',include('award.urls')),
-    path('accounts/register/',insta_views.register, name='register'),
-    path('accounts/login/',auth_views.LoginView.as_view(redirect_authenticated_user=True), name='login'),
-    path('logout/',auth_views.LogoutView.as_view(), name='logout'),
+    path("admin/", admin.site.urls),
+    path("accounts/register/",RegistrationView.as_view(success_url="/profile"),name="django_registration_register",),
+    path("accounts/", include("django_registration.backends.one_step.urls")),
+    path("accounts/", include("django.contrib.auth.urls")),
+    path("api-auth/", include("rest_framework.urls")),
+    path('logout/',auth_views.LogoutView.as_view(template_name = 'registration/logout.html'),name='logout'),
+    url(r"^", include("award.urls")),
 ]

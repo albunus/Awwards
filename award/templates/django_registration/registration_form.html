@@ -16,13 +16,13 @@
                 </div>
                 <div class="card-body mb-2 mr-3 ml-3">
                     <h6 class="text-center text-muted intro">Sign up to see my projects.</h6>
-                    <form action="" method="post" novalidate>
+                    <form action="/accounts/register/" method="post">
                         {% csrf_token%}
-                        {{ form|crispy}}
+                        {% bootstrap_form form %}
                         <button type="submit" class="btn btn-primary btn-sm login"> Sign up</button>
                     </form>
                 </div>
-                <small class="text-muted text-center mb-2"> Have an account? <a href="{%url 'login'%}">Log in</a></small>  
+                <small class="text-muted text-center mb-2"> Have an account? <a href="/accounts/login" class="">Login</a></small>  
             </div>
         </div>
 

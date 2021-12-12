@@ -12,15 +12,14 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializer import ProfileSerializer,ProjectSerializer
 from .permissions import IsAdminOrReadOnly
-from .forms import  UpdateUserForm, UpdateUserProfileForm
 
-
+@login_required(login_url="/accounts/login/")
 def index(request):  # Home page
     project = Project.objects.all()
     # get the latest project from the database
-    latest_project = project[0]
+    latest_project = project.first()
     # get project rating
-    rating = Rating.objects.filter(project_id=latest_project.id).first()
+    rating = Rating.objects.filter(project_id=latest_project).first()
     # print(latest_project.id)
 
     return render(
@@ -29,8 +28,8 @@ def index(request):  # Home page
 
 
 # single project page
-def project_details(request, project_id):
-    project = Project.objects.get(id=project_id)
+def project_details(request,id):
+    project = Project.objects.get(id=id)
     # get project rating
     rating = Rating.objects.filter(project=project)
     return render(request, "project.html", {"project": project, "rating": rating})
@@ -88,7 +87,7 @@ def update_profile(request):
 
         user.save()
 
-        return redirect("/profile", {"success": "Profile Updated Successfully"})
+        return redirect("/profile/", {"success": "Profile Updated Successfully"})
 
         # return render(request, 'profile.html', {'success': 'Profile Updated Successfully'})
     else:
@@ -122,7 +121,7 @@ def save_project(request):
         )
         project.save_project()
 
-        return redirect("/profile", {"success": "Project Saved Successfully"})
+        return redirect("/profile/", {"success": "Project Saved Successfully"})
     else:
         return render(request, "profile.html", {"danger": "Project Save Failed"})
 
@@ -132,7 +131,7 @@ def save_project(request):
 def delete_project(request, id):
     project = Project.objects.get(id=id)
     project.delete_project()
-    return redirect("/profile", {"success": "Project Deleted Successfully"})
+    return redirect("/profile/", {"success": "Project Deleted Successfully"})
 
 
 # rate_project

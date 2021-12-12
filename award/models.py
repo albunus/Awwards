@@ -12,7 +12,7 @@ class Profile(models.Model):
     bio = models.TextField(max_length=400, default="Bio", blank=True)
     name = models.CharField(blank=True, max_length=120)
     contact =models.CharField(blank=True, max_length=20, null=True)
-    profile_pic = models.ImageField(upload_to='images/',default='v1638711191/images/default_qu1pfb.png')
+    profile_photo = CloudinaryField("image", null=True)
    
 
     def __str__(self):
