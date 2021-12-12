@@ -14,3 +14,6 @@ To access this project on your local files, you can clone it using these steps
 1. Use this command to clone $ git clone https://github.com/albunus/Awwards
 1. This will clone the repositoty into your local folder
 *****
+### Home page
+A user is required to register and login to the application. Upon successful authentication the user is redirected to home page where all projects posted by different users is displayed.
+*****
