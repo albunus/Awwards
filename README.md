@@ -62,3 +62,9 @@ A user can search projects and it will return projects matching the search term 
 * whitenoise
 * gunicorn
 *****
+## Technologies Used
+* HTML
+* Python 3
+* JavaScript
+* CSS
+******
