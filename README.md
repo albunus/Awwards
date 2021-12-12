@@ -24,3 +24,6 @@ Every user registered in the application has profile associated with their accou
 A user can click on any project image and a page will be displayed containing the project information like ratings, project title, description, live link, repository link and also date posted.  
 A user can only see a delete button if they are the owner of the post so they cannot delete a post belonging to another user
 *****
+### Search Function
+A user can search projects and it will return projects matching the search term or display "Found 0 results if no match found by the search function.
+*****
