@@ -11,7 +11,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,related_name='profile')
     bio = models.TextField(max_length=400, default="Bio", blank=True)
     name = models.CharField(blank=True, max_length=120)
-    telphone_number =models.CharField(blank=True, max_length=20, null=True)
+    contact =models.CharField(blank=True, max_length=20, null=True)
     profile_pic = models.ImageField(upload_to='images/',default='v1638711191/images/default_qu1pfb.png')
    
 
@@ -36,3 +36,5 @@ class Profile(models.Model):
     @classmethod
     def search_profile(cls, name):
         return cls.objects.filter(user__username__icontains=name).all()
+    
+

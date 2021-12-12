@@ -16,7 +16,7 @@ class UserRegisterForm(UserCreationForm):
         help_texts = { 'username': None, 'password2': None, }
 
 
-        User._meta.get_field('email')._unique = True 
+User._meta.get_field('email')._unique = True 
     
 class UpdateUserProfileForm(forms.ModelForm):
     class Meta:
