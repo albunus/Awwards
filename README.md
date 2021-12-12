@@ -76,3 +76,6 @@ Or you can access the web application directly via this [LIVE LINK]().
 This project is under:  
 [![License: MIT](/LICENSE)
 *****
+
+### Questions?
+Email: **[albunus.nyalita@student.moringaschool.com](mailto:albunus.nyalita@student.moringaschool.com)**
