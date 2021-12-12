@@ -3,6 +3,31 @@
 Albunus Nyalita
 ### Description
 This is a Django web application that allows users to view posted projects and their details. 
+<img src="static/image/Screenshot from 2021-12-12 21-32-46.png">
+ 
+ 
+ <img src="static/image/Screenshot from 2021-12-12 21-32-58.png">
+
+ 
+
+<img src="static/image/Screenshot from 2021-12-12 21-33-24.png">
+
+ 
+<img src="static/image/Screenshot from 2021-12-12 21-33-33.png">
+<img src="static/image/Screenshot from 2021-12-12 21-33-43.png">
+<img src="static/image/Screenshot from 2021-12-12 21-33-55.png">
+<img src="static/image/Screenshot from 2021-12-12 21-34-03.png">
+ 
+ 
+ <img src="static/image/Screenshot from 2021-12-12 21-34-10.png">
+
+ 
+<img src="static/image/Screenshot from 2021-12-12 21-34-38.png">
+<img src="static/image/Screenshot from 2021-12-12 21-34-50.png">
+
+
+
+
 ### Prerequisites
 * Text editor eg Visual Studio Code
 * You need to have git installed. You can install it with the following command in your terminal
