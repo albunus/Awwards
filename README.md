@@ -50,3 +50,15 @@ A user can search projects and it will return projects matching the search term 
 1. Provides a delete function for project
    - INPUT: Delete button clicked
    - OUTPUT: Project deleted
+   
+   ## Dependencies
+* django-bootstrap
+* Pillow
+* cloudinary
+* psycopg2
+* django-registration
+* python-decouple
+* Python Venv
+* whitenoise
+* gunicorn
+*****
