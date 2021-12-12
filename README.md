@@ -20,3 +20,7 @@ A user is required to register and login to the application. Upon successful aut
 ### User Profile
 Every user registered in the application has profile associated with their account. Profile contains personal details and projects posted by that particular user.
 *****
+### View Project details
+A user can click on any project image and a page will be displayed containing the project information like ratings, project title, description, live link, repository link and also date posted.  
+A user can only see a delete button if they are the owner of the post so they cannot delete a post belonging to another user
+*****
