@@ -71,3 +71,8 @@ A user can search projects and it will return projects matching the search term 
 ### Live Link
 Or you can access the web application directly via this [LIVE LINK]().
 *****
+
+### License
+This project is under:  
+[![License: MIT](/LICENSE)
+*****
