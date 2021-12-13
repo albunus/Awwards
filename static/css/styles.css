@@ -3,6 +3,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Merienda:wght@700&amp;display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Aclonica&display=swap");
 
+.icon {
+  height: 1.2cm !important;
+  width: 1.2cm !important;
+  border-radius: 50% !important;
+}
+
+button{
+  background-color: green;
+  color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+}
+button:hover{
+  background-color: whitesmoke;
+  color: green;
+}
+
+
+.card:hover{
+  box-shadow: 0 0 10px , 0 0 20px rgb(112, 108, 108), 0 0 40px rgb(112, 108, 108);
+  border-radius: 10px;
+  background-color: white;
+}
+
+
+a {
+  color: white !important;
+  
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -415,3 +447,15 @@ a:focus {
 .not-found, .not-found i {
   font-size: 2em;
 }
+
+footer {
+  color: white !important;
+  margin-top: 3rem !important;
+}
+.actions {
+  margin-left: 0.3rem;
+}
+h3 {
+  color: #001524;
+}
+
