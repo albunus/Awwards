@@ -2,7 +2,7 @@
 ## Author
 Albunus Nyalita
 ### Description
-This is a Django web application that allows users to view posted projects and their details. 
+This is a Django web application that allows users to post,view posted projects and their details, and rate them. 
 <img src="static/image/Screenshot from 2021-12-12 21-32-46.png">
  
  
@@ -94,7 +94,7 @@ A user can search projects and it will return projects matching the search term 
 * CSS
 ******
 ### Live Link
-Or you can access the web application directly via this [LIVE LINK]().
+Or you can access the web application directly via this [https://awardsalbunus.herokuapp.com/]().
 *****
 
 ### License
