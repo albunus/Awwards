@@ -10,30 +10,25 @@
 }
 
 button{
-  background-color: green;
-  color: whitesmoke;
-  border: none;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 5px;
+    background-color: green;
+    color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
 }
 button:hover{
-  background-color: whitesmoke;
-  color: green;
+    background-color: rgb(163, 145, 40);
+    color: green;
 }
 
 
 .card:hover{
-  box-shadow: 0 0 10px , 0 0 20px rgb(112, 108, 108), 0 0 40px rgb(112, 108, 108);
-  border-radius: 10px;
-  background-color: white;
+    box-shadow: 0 0 10px , 0 0 20px rgb(112, 108, 108), 0 0 40px rgb(112, 108, 108);
+    border-radius: 10px;
+    background-color: white;
 }
 
-
-a {
-  color: white !important;
-  
-}
 
 body {
   margin: 0;

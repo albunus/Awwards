@@ -1,18 +1,17 @@
+
+
 <nav class="navbar navbar-expand-lg">
   <div class="container container-fluid"><h1><i class="fas fa-award"></i></h1>
-      <a class="navbar-brand" href="/">
-          Awwards
-      </a>
+      <a class="navbar-brand text-dark" href="/">Awwards</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           <i class="fa fa-bars"></i>
       </button>
 
-      <div class="col-md-2"></div>
-      <a href="/"><i class="fas fa-house-user"></i>Home</a>
+      <div class="col-md-1"></div>
 
-      <div class="col-md-2"></div>
+      <div class="col-md-1"></div>
       <div class="collapse navbar-collapse" id="navbarContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           </ul>
@@ -25,12 +24,12 @@
             
                 <div class="col-md-2"></div>
 
-                <li class="dropdown">
+                <li class="dropdown text-dark">
                   <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button"
                     aria-expanded="false">Dashboard Nav
                     <span class="caret"></span>
                   </a>
-                  <ul class="dropdown-menu" role="menu">
+                  <ul class="dropdown-menu text-dark" role="menu">
                     <li>
                       <a href="/admin/">Admin</a>
                     </li>
@@ -47,10 +46,7 @@
                 </li>
                 {% else %}
                 <li>
-                  <a class='btn btn-danger' style="color: white;" href="accounts/register">Sigup</a>
-                </li>
-                <li>
-                  <a class='btn btn-danger' style="color: white; margin-left:5px" href="accounts/login">Login</a>
+                <button><h1><a href="/" class="text-white"><i class="fas fa-house-user"></i>Home</a><h1></button>
                 </li>
       
                 {% endif %}
