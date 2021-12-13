@@ -25,6 +25,7 @@ urlpatterns = [
     path("accounts/", include("django_registration.backends.one_step.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
     path("api-auth/", include("rest_framework.urls")),
+    path('logout',auth_views.LogoutView.as_view(template_name = 'registration/logout.html'),name='logout'),
     path('logout/',auth_views.LogoutView.as_view(template_name = 'registration/logout.html'),name='logout'),
     url(r"^", include("award.urls")),
 ]
